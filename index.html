@@ -1,0 +1,518 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SENTINEL - Password Intelligence System</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>🛡 SENTINEL</h1>
+
+        <p class="subtitle">
+            Password Intelligence & Security Analysis
+        </p>
+
+        <!-- PASSWORD INPUT -->
+
+        <input
+            type="password"
+            id="password"
+            placeholder="Enter your password"
+        >
+
+        <button onclick="togglePassword()">
+            Show Password
+        </button>
+
+
+        <!-- CIRCULAR SECURITY ANALYSIS -->
+
+        <div class="analysis-card">
+
+            <div class="score-ring" id="score-ring">
+
+                <div class="score-inner">
+                    <span id="score-value">0</span>
+                    <small>/100</small>
+                </div>
+
+            </div>
+
+            <div class="score-details">
+
+                <h3 id="strength">Awaiting Analysis</h3>
+
+                <p id="score-message">
+                    Enter your password to begin security analysis.
+                </p>
+
+                <div class="progress">
+                    <div id="progress-bar"></div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- PASSWORD REQUIREMENTS -->
+
+        <h3>Password Requirements</h3>
+
+        <ul>
+            <li id="length">At least 8 characters</li>
+            <li id="uppercase">Uppercase letter (A-Z)</li>
+            <li id="lowercase">Lowercase letter (a-z)</li>
+            <li id="number">Number (0-9)</li>
+            <li id="special">Special character (@, #, !)</li>
+        </ul>
+
+
+        <!-- PASSWORD SUGGESTIONS -->
+
+        <h3>Suggestions</h3>
+
+        <p id="suggestions">
+            Enter a password to see suggestions.
+        </p>
+
+
+        <!-- SECURE PASSWORD GENERATOR -->
+
+        <div class="generator-card">
+
+            <h3>⚡ Secure Password Generator</h3>
+
+            <p>Create a random password instantly.</p>
+
+            <div class="generator-output">
+
+                <input
+                    type="text"
+                    id="generatedPassword"
+                    placeholder="Generated password appears here"
+                    readonly
+                >
+
+                <button type="button" onclick="copyPassword()">
+                    Copy
+                </button>
+
+            </div>
+
+            <button type="button" onclick="generatePassword()">
+                Generate Secure Password
+            </button>
+
+            <p id="generator-message"></p>
+
+        </div>
+
+
+        <!-- STAGE 3: ADVANCED SECURITY INTELLIGENCE -->
+
+        <div class="advanced-card">
+
+            <div class="advanced-heading">
+                <span>◈</span>
+                <h3>ADVANCED SECURITY INTELLIGENCE</h3>
+            </div>
+
+            <p class="advanced-description">
+                Deep password analysis powered by zxcvbn.
+            </p>
+
+            <div class="advanced-grid">
+
+                <!-- ESTIMATED ENTROPY -->
+
+                <div class="metric-box">
+
+                    <span class="metric-icon">⚡</span>
+
+                    <h4>ESTIMATED GUESS ENTROPY</h4>
+
+                    <div class="metric-value">
+                        <span id="entropy-value">--</span>
+                        <small>bits</small>
+                    </div>
+
+                </div>
+
+
+                <!-- CRACK-TIME ESTIMATES -->
+
+                <div class="metric-box">
+                    <span class="metric-icon">⏱</span>
+                    <h4>ONLINE — RATE LIMITED</h4>
+                    <div class="metric-value">
+                        <span id="crack-online-throttled">--</span>
+                    </div>
+                    <small>100 guesses per hour</small>
+                </div>
+
+                <div class="metric-box">
+                    <span class="metric-icon">🌐</span>
+                    <h4>ONLINE — NO RATE LIMIT</h4>
+                    <div class="metric-value">
+                        <span id="crack-online-unthrottled">--</span>
+                    </div>
+                    <small>10 guesses per second</small>
+                </div>
+
+                <div class="metric-box">
+                    <span class="metric-icon">🔒</span>
+                    <h4>OFFLINE — SLOW HASH</h4>
+                    <div class="metric-value">
+                        <span id="crack-offline-slow">--</span>
+                    </div>
+                    <small>10 thousand guesses per second</small>
+                </div>
+
+                <div class="metric-box">
+                    <span class="metric-icon">⚡</span>
+                    <h4>OFFLINE — FAST HASH</h4>
+                    <div class="metric-value">
+                        <span id="crack-offline-fast">--</span>
+                    </div>
+                    <small>10 billion guesses per second</small>
+                </div>
+
+            </div>
+
+
+            <!-- COMMON PASSWORD DETECTION -->
+
+            <div class="intelligence-section">
+
+                <h4>DICTIONARY / COMMON-PATTERN INDICATOR</h4>
+
+                <p id="common-status">
+                    Waiting for password analysis...
+                </p>
+
+            </div>
+
+
+            <!-- PATTERN ANALYSIS -->
+
+            <div class="intelligence-section">
+
+                <h4>PATTERN ANALYSIS</h4>
+
+                <p id="pattern-status">
+                    No analysis performed yet.
+                </p>
+
+            </div>
+
+
+            <!-- SECURITY RECOMMENDATIONS -->
+
+            <div class="intelligence-section">
+
+                <h4>SECURITY RECOMMENDATIONS</h4>
+
+                <ul id="advanced-feedback">
+                    <li>Enter a password to start analysis.</li>
+                </ul>
+
+            </div>
+
+
+            <!-- ENGINE STATUS -->
+
+            <div class="engine-status">
+
+                <span class="status-dot"></span>
+
+                ADVANCED ENGINE READY
+
+            </div>
+
+        </div>
+
+
+        <!-- STAGE 4: PRIVACY-PRESERVING BREACH DETECTION -->
+
+        <section class="breach-card" aria-labelledby="breach-title">
+
+            <div class="advanced-heading">
+                <span>◈</span>
+                <h3 id="breach-title">PASSWORD BREACH DETECTION</h3>
+            </div>
+
+            <p class="advanced-description">
+                Check whether this password appears in known breach datasets
+                using a privacy-preserving hash-range lookup.
+            </p>
+
+            <button type="button" id="check-breach-btn">
+                Check Password Breach Status
+            </button>
+
+            <div id="breach-result" class="breach-result" role="status" aria-live="polite">
+
+                <strong>Not checked yet</strong>
+
+                <p>Enter a password, then select the check button.</p>
+
+            </div>
+
+            <p class="privacy-note">
+                <strong>Privacy:</strong> SENTINEL creates the SHA-1 hash in your browser.
+                Only the first 5 hash characters are sent to Have I Been Pwned.
+                The remaining hash comparison happens locally. The password itself
+                is never sent. This check runs only when you press the button.
+            </p>
+
+            <p class="hibp-credit">
+
+                Breach data provided by
+
+                <a href="https://haveibeenpwned.com/Passwords"
+                   target="_blank"
+                   rel="noopener noreferrer">
+
+                    Have I Been Pwned – Pwned Passwords
+
+                </a>.
+
+            </p>
+
+        </section>
+
+
+        <!-- ================================================= -->
+        <!-- STAGE 5: OVERALL SECURITY REPORT -->
+        <!-- ================================================= -->
+
+        <section class="report-section" id="security-report-section">
+
+            <div class="advanced-heading">
+
+                <span>◈</span>
+
+                <h3>OVERALL SECURITY REPORT</h3>
+
+            </div>
+
+            <p class="advanced-description">
+
+                Generate a complete security assessment based on your
+                password strength, advanced analysis, crack-time estimates,
+                pattern detection and breach status.
+
+            </p>
+
+
+            <!-- REPORT ACTION BUTTONS -->
+
+            <div class="report-actions">
+
+                <button type="button" id="generate-report-btn">
+
+                    Generate Security Report
+
+                </button>
+
+                <button type="button" id="download-report-btn">
+
+                    Download PDF Report
+
+                </button>
+
+            </div>
+
+
+            <!-- REPORT STATUS -->
+
+            <p id="report-status" role="status" aria-live="polite">
+
+                Generate your security report after completing password analysis.
+
+            </p>
+
+
+            <!-- SECURITY REPORT CONTENT -->
+
+            <div class="security-report" id="security-report">
+
+                <h3>🛡 SENTINEL Security Assessment</h3>
+
+                <p>
+                    Your overall password security analysis is displayed below.
+                </p>
+
+
+                <!-- OVERALL PASSWORD STRENGTH -->
+
+                <div class="report-grid">
+
+                    <div class="report-item">
+
+                        <h4>Overall Strength</h4>
+
+                        <p id="report-strength">--</p>
+
+                    </div>
+
+
+                    <div class="report-item">
+
+                        <h4>Security Score</h4>
+
+                        <p id="report-score">--</p>
+
+                    </div>
+
+
+                    <div class="report-item">
+
+                        <h4>Estimated Entropy</h4>
+
+                        <p id="report-entropy">--</p>
+
+                    </div>
+
+
+                    <div class="report-item">
+
+                        <h4>Breach Detection</h4>
+
+                        <p id="report-breach">--</p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CRACK-TIME ANALYSIS -->
+
+                <div class="intelligence-section">
+
+                    <h4>CRACK-TIME ESTIMATES</h4>
+
+                    <div class="report-grid">
+
+                        <div class="report-item">
+
+                            <h4>Online — Rate Limited</h4>
+
+                            <p id="report-online-throttled">--</p>
+
+                        </div>
+
+
+                        <div class="report-item">
+
+                            <h4>Online — No Rate Limit</h4>
+
+                            <p id="report-online-unthrottled">--</p>
+
+                        </div>
+
+
+                        <div class="report-item">
+
+                            <h4>Offline — Slow Hash</h4>
+
+                            <p id="report-offline-slow">--</p>
+
+                        </div>
+
+
+                        <div class="report-item">
+
+                            <h4>Offline — Fast Hash</h4>
+
+                            <p id="report-offline-fast">--</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PATTERN AND DICTIONARY ANALYSIS -->
+
+                <div class="intelligence-section">
+
+                    <h4>COMMON PASSWORD DETECTION</h4>
+
+                    <p id="report-common">--</p>
+
+                </div>
+
+
+                <div class="intelligence-section">
+
+                    <h4>PATTERN ANALYSIS</h4>
+
+                    <p id="report-pattern">--</p>
+
+                </div>
+
+
+                <!-- FINAL RECOMMENDATIONS -->
+
+                <div class="intelligence-section">
+
+                    <h4>FINAL SECURITY RECOMMENDATIONS</h4>
+
+                    <ul id="report-recommendations">
+
+                        <li>Generate a report to view recommendations.</li>
+
+                    </ul>
+
+                </div>
+
+
+                <p class="privacy-note">
+
+                    This report does not contain your actual password.
+                    It summarizes the security analysis performed by SENTINEL.
+
+                </p>
+
+            </div>
+
+        </section>
+<!-- DEVELOPER CREDIT -->
+
+<footer class="developer-credit">
+    <p>Developed with 💜 by <strong>Mridhula A</strong></p>
+    <small>SENTINEL — Password Intelligence & Security Analysis</small>
+</footer>
+
+</div>
+    </div>
+
+
+    <!-- ADVANCED PASSWORD ANALYSIS ENGINE -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.4.2/zxcvbn.js"></script>
+
+
+    <!-- PDF GENERATION LIBRARY -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+
+    <!-- SENTINEL JAVASCRIPT -->
+
+    <script src="script.js"></script>
+
+</body>
+</html>

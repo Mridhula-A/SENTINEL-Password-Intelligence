@@ -1,0 +1,790 @@
+
+/* GENERAL STYLING */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #050b0b;
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 15px;
+}
+
+/* MAIN CONTAINER */
+.container {
+    width: 100%;
+    max-width: 550px;
+    background: #0b1413;
+    padding: 35px;
+    border: 1px solid #315b3a;
+    border-radius: 18px;
+    box-shadow: 0 0 25px rgba(65, 180, 75, 0.15);
+}
+
+/* HEADING */
+h1 {
+    text-align: center;
+    color: #76db57;
+    font-size: 30px;
+    margin-bottom: 12px;
+}
+
+.container > p {
+    text-align: center;
+    color: #b6c5b8;
+    margin-bottom: 25px;
+}
+
+/* PASSWORD INPUT */
+input {
+    width: 100%;
+    padding: 15px;
+    background: #111d1a;
+    border: 1px solid #477d4a;
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    outline: none;
+    margin-bottom: 12px;
+}
+
+input:focus {
+    border-color: #76db57;
+    box-shadow: 0 0 10px rgba(118, 219, 87, 0.3);
+}
+
+/* BUTTON */
+button {
+    width: 100%;
+    padding: 12px;
+    background: #246b35;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    margin-bottom: 25px;
+}
+
+button:hover {
+    background: #328d45;
+}
+
+/* STRENGTH BOX */
+.strength-box {
+    background: #111d1a;
+    border-radius: 10px;
+    padding: 18px;
+    margin-bottom: 25px;
+    border: 1px solid #294b30;
+}
+
+.strength-box h3 {
+    color: #76db57;
+    margin-bottom: 12px;
+}
+
+/* PROGRESS BAR */
+.progress {
+    width: 100%;
+    height: 12px;
+    background: #303b37;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+#progress-bar {
+    width: 0%;
+    height: 100%;
+    background: #e5484d;
+    border-radius: 20px;
+    transition: width 0.4s ease, background 0.4s ease;
+}
+
+/* REQUIREMENTS */
+.container h3 {
+    margin-bottom: 14px;
+    color: #76db57;
+}
+
+ul {
+    list-style: none;
+    margin-bottom: 25px;
+}
+
+li {
+    padding: 9px;
+    margin-bottom: 7px;
+    background: #111d1a;
+    border-radius: 6px;
+    color: #c2d0c3;
+}
+
+li::before {
+    content: "○ ";
+    color: #e5484d;
+    font-weight: bold;
+}
+
+li.valid::before {
+    content: "✓ ";
+    color: #76db57;
+}
+
+/* SUGGESTIONS */
+#suggestions {
+    color: #c2d0c3;
+    background: #111d1a;
+    border-left: 3px solid #76db57;
+    padding: 15px;
+    border-radius: 5px;
+    line-height: 1.7;
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 500px) {
+    .container {
+        padding: 22px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+}
+
+/* SENTINEL - PREMIUM CYBERSECURITY THEME */
+
+body {
+    background:
+        radial-gradient(ellipse at 15% 10%, #123b27 0%, transparent 35%),
+        radial-gradient(ellipse at 90% 90%, #102d25 0%, transparent 35%),
+        #030807;
+    font-family: "Segoe UI", sans-serif;
+}
+
+.container {
+    max-width: 650px;
+    background: rgba(9, 22, 17, 0.94);
+    border: 1px solid #286344;
+    border-radius: 22px;
+    box-shadow:
+        0 0 30px rgba(40, 220, 110, 0.08),
+        inset 0 0 25px rgba(40, 220, 110, 0.025);
+    backdrop-filter: blur(15px);
+    animation: appear 0.8s ease;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h1 {
+    font-size: 38px;
+    letter-spacing: 4px;
+    background: linear-gradient(
+        90deg, #42df79, #b1ff8a
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 0 20px rgba(65, 220, 120, 0.15);
+}
+
+.subtitle {
+    color: #91b6a0;
+    letter-spacing: 1px;
+    font-size: 13px;
+}
+
+input {
+    background: #07140e;
+    border: 1px solid #286344;
+    padding: 17px;
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+input:focus {
+    border-color: #54ed91;
+    box-shadow: 0 0 18px rgba(84, 237, 145, 0.2);
+}
+
+button {
+    background: linear-gradient(90deg, #146b3a, #239d54);
+    border-radius: 10px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(50, 220, 110, 0.2);
+}
+
+.strength-box {
+    background: linear-gradient(135deg, #10251a, #09150f);
+    border: 1px solid #285b3b;
+    border-radius: 14px;
+    padding: 22px;
+}
+
+.progress {
+    height: 14px;
+    background: #263b2e;
+}
+
+#progress-bar {
+    box-shadow: 0 0 12px currentColor;
+}
+
+li {
+    background: #0e1e15;
+    border: 1px solid rgba(70, 150, 90, 0.12);
+    border-radius: 9px;
+    padding: 12px;
+    transition: 0.25s;
+}
+
+li.valid {
+    border-color: rgba(65, 220, 120, 0.3);
+    color: #8df5aa;
+}
+
+#suggestions {
+    background: #0d2117;
+    border-left: 3px solid #4ce78b;
+    border-radius: 8px;
+}
+
+/* CIRCULAR SECURITY ANALYSIS */
+
+.analysis-card {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    padding: 22px;
+    margin-bottom: 25px;
+    background: linear-gradient(135deg, #10251a, #09150f);
+    border: 1px solid #286344;
+    border-radius: 15px;
+}
+
+.score-ring {
+    width: 125px;
+    height: 125px;
+    min-width: 125px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: conic-gradient(
+        #35c66b 0%,
+        #263b2e 0%
+    );
+    transition: background 0.5s ease;
+    position: relative;
+}
+
+.score-inner {
+    width: 103px;
+    height: 103px;
+    border-radius: 50%;
+    background: #0b1710;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+}
+
+#score-value {
+    font-size: 34px;
+    font-weight: bold;
+    color: #65e995;
+}
+
+.score-inner small {
+    color: #8fae9b;
+    font-size: 12px;
+}
+
+.score-details {
+    flex: 1;
+}
+
+.score-details h3 {
+    color: #65e995;
+    margin-bottom: 10px;
+}
+
+.score-details p {
+    color: #a7c5b2;
+    font-size: 13px;
+    line-height: 1.6;
+    margin-bottom: 14px;
+}
+
+/* PASSWORD GENERATOR */
+
+.generator-card {
+    margin-top: 25px;
+    padding: 22px;
+    border: 1px solid #286344;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #10251a, #09150f);
+}
+
+.generator-card h3 {
+    color: #65e995;
+    margin-bottom: 10px;
+}
+
+.generator-card > p {
+    color: #a7c5b2;
+    font-size: 13px;
+    margin-bottom: 15px;
+}
+
+.generator-output {
+    display: flex;
+    gap: 8px;
+    align-items: stretch;
+}
+
+.generator-output input {
+    flex: 1;
+    min-width: 0;
+    margin: 0 0 12px;
+    font-size: 13px;
+}
+
+.generator-output button {
+    width: auto;
+    padding: 0 16px;
+    margin-bottom: 12px;
+}
+
+.generator-card > button {
+    margin-bottom: 0;
+}
+
+#generator-message {
+    color: #65e995;
+    margin-top: 12px;
+    font-size: 12px;
+}
+
+@media (max-width: 450px) {
+    .analysis-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .score-details {
+        width: 100%;
+    }
+
+    .generator-output {
+        flex-wrap: wrap;
+    }
+
+    .generator-output input {
+        width: 100%;
+    }
+}
+
+/* ==================================
+   SENTINEL ADVANCED INTELLIGENCE
+================================== */
+
+.advanced-card {
+    margin-top: 25px;
+    padding: 24px;
+    background: linear-gradient(145deg, #0d2017, #07110d);
+    border: 1px solid #286344;
+    border-radius: 16px;
+    box-shadow: 0 0 20px rgba(40, 220, 110, 0.06);
+}
+
+.advanced-heading {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+
+.advanced-heading span {
+    font-size: 25px;
+    color: #55ed91;
+}
+
+.advanced-heading h3 {
+    color: #65e995;
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+
+.advanced-description {
+    color: #91b6a0;
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+.advanced-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.metric-box {
+    background: #10251a;
+    border: 1px solid #285b3b;
+    border-radius: 12px;
+    padding: 17px;
+    min-width: 0;
+}
+
+.metric-icon {
+    font-size: 23px;
+}
+
+.metric-box h4,
+.intelligence-section h4 {
+    color: #8fcba3;
+    font-size: 11px;
+    letter-spacing: 1px;
+    margin: 12px 0;
+}
+
+.metric-value {
+    color: #65e995;
+    font-size: 25px;
+    font-weight: bold;
+    overflow-wrap: anywhere;
+}
+
+.metric-value small {
+    font-size: 12px;
+    color: #91b6a0;
+}
+
+.metric-box > small {
+    color: #91b6a0;
+    font-size: 10px;
+    line-height: 1.5;
+}
+
+.intelligence-section {
+    margin-top: 17px;
+    padding: 15px;
+    background: #102018;
+    border-radius: 10px;
+    border-left: 3px solid #36c978;
+}
+
+.intelligence-section p {
+    color: #c1d7c8;
+    font-size: 13px;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+}
+
+#advanced-feedback {
+    list-style: none;
+    margin: 0;
+}
+
+#advanced-feedback li {
+    color: #c1d7c8;
+    font-size: 13px;
+    line-height: 1.5;
+    background: transparent;
+    border: none;
+    padding: 5px 0;
+}
+
+#advanced-feedback li::before {
+    content: "→ ";
+    color: #55ed91;
+}
+
+.engine-status {
+    margin-top: 20px;
+    text-align: center;
+    color: #65e995;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+}
+
+.status-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: #35d878;
+    border-radius: 50%;
+    margin-right: 7px;
+    box-shadow: 0 0 10px #35d878;
+}
+
+@media (max-width: 450px) {
+    .advanced-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .advanced-heading h3 {
+        font-size: 13px;
+    }
+}
+
+
+/* STAGE 3 - MULTI-SCENARIO CRACK-TIME DASHBOARD */
+.advanced-grid .metric-box {
+    min-height: 145px;
+}
+
+.advanced-grid .metric-box h4 {
+    line-height: 1.5;
+}
+
+.advanced-grid .metric-value {
+    font-size: clamp(17px, 3vw, 23px);
+    line-height: 1.35;
+}
+
+@media (max-width: 450px) {
+    .advanced-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* STAGE 4 - BREACH DETECTION PANEL */
+.breach-card {
+    margin-top: 25px;
+    padding: 24px;
+    background: linear-gradient(145deg, #0d2017, #07110d);
+    border: 1px solid #286344;
+    border-radius: 16px;
+    box-shadow: 0 0 20px rgba(40, 220, 110, 0.06);
+}
+
+.breach-card > button {
+    margin: 0 0 16px;
+}
+
+.breach-card > button:disabled {
+    opacity: 0.65;
+    cursor: wait;
+    transform: none;
+}
+
+.breach-result {
+    padding: 16px;
+    border: 1px solid #315b3a;
+    border-left: 4px solid #91b6a0;
+    border-radius: 10px;
+    background: #102018;
+    color: #d4e7d9;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+.breach-result strong {
+    display: block;
+    margin-bottom: 5px;
+    color: #b8e9c6;
+}
+
+.breach-result p {
+    font-size: 13px;
+    color: #c1d7c8;
+}
+
+.breach-result.safe { border-left-color: #35c66b; }
+.breach-result.safe strong { color: #65e995; }
+.breach-result.danger { border-left-color: #e5484d; }
+.breach-result.danger strong { color: #ff8585; }
+.breach-result.warning { border-left-color: #e9c443; }
+.breach-result.warning strong { color: #f1d66d; }
+.breach-result.checking { border-left-color: #54a9e8; }
+
+.privacy-note,
+.hibp-credit {
+    margin-top: 14px;
+    color: #91b6a0;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.hibp-credit a {
+    color: #65e995;
+    text-decoration: underline;
+}
+
+@media (max-width: 450px) {
+    .breach-card { padding: 18px; }
+}
+
+/* =====================================================
+   STAGE 5: OVERALL SECURITY REPORT
+===================================================== */
+
+.report-section {
+    margin-top: 35px;
+    padding: 25px;
+    border: 1px solid rgba(0, 255, 170, 0.25);
+    border-radius: 15px;
+    background: rgba(10, 25, 25, 0.85);
+}
+
+.report-section h2 {
+    color: #00ffaa;
+    margin-bottom: 10px;
+}
+
+.report-description {
+    color: #aabdb8;
+    margin-bottom: 20px;
+}
+
+.security-report {
+    padding: 20px;
+    border-radius: 12px;
+    background: rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(0, 255, 170, 0.15);
+    margin-bottom: 20px;
+}
+
+.security-report h3 {
+    color: #00ffaa;
+    font-size: 17px;
+    margin: 20px 0 12px;
+}
+
+.security-report h3:first-child {
+    margin-top: 0;
+}
+
+.security-report p,
+.security-report li {
+    color: #d4e5df;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+}
+
+.report-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.report-item {
+    padding: 15px;
+    background: rgba(0, 255, 170, 0.06);
+    border: 1px solid rgba(0, 255, 170, 0.15);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.report-item span {
+    color: #aabdb8;
+    font-size: 13px;
+}
+
+.report-item strong {
+    color: #00ffaa;
+    overflow-wrap: anywhere;
+}
+
+.report-list {
+    padding-left: 20px;
+}
+
+#report-recommendations {
+    color: #d4e5df;
+    line-height: 1.8;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+.report-section button {
+    width: 100%;
+    padding: 13px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 8px;
+    background: #00ffaa;
+    color: #061510;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.report-section button:hover {
+    background: #00d995;
+    transform: translateY(-2px);
+}
+
+.security-report.report-generated {
+    border-color: rgba(0, 255, 170, 0.5);
+}
+
+/* Responsive design */
+
+@media (max-width: 600px) {
+
+    .report-section {
+        padding: 15px;
+    }
+
+    .report-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .security-report {
+        padding: 14px;
+    }
+}
+
+/* =====================================================
+   END OF STAGE 5
+===================================================== */
+/* DEVELOPER CREDIT */
+
+.developer-credit {
+    text-align: center;
+    margin-top: 35px;
+    padding: 20px 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    color: #bdb5cc;
+}
+
+.developer-credit p {
+    font-size: 15px;
+    margin-bottom: 6px;
+}
+
+.developer-credit strong {
+    color: #c084fc;
+}
+
+.developer-credit small {
+    font-size: 12px;
+    opacity: 0.75;
+}
