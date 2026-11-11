@@ -52,7 +52,7 @@ SENTINEL addresses this problem by providing real-time password analysis, streng
 **1. Clone the repository**
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/SENTINEL-Password-Intelligence.git
+git clone https://github.com/Mridhula-A/SENTINEL-Password-Intelligence.git
 ```
 
 **2. Navigate to the project folder**
